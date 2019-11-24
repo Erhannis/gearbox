@@ -6,4 +6,6 @@ Oh, and flattedShaft is just a test crank.  Didn't have anything around that fit
 
 Printing: I used 0.2 layer height, 20% infill.  Cura's "Standard Quality" setting.  (Skirt, not brim.)  BUT, by default it's far too tight a fit.  I've discovered that Cura's "Horizontal Expansion" setting sorta makes it as if you dipped your piece in wax or in acid, for positive and negative values, respectively; it's pretty great as an "auto-tolerance" setting.  I found between -0.08 (slightly too tight) and -0.1 (slightly too loose) to be good on my printer.  Note that if you aren't careful, Horizontal Expansion can eat through pieces if they were already thin and you set it too high (negative).
 
+Assembly: use GDFW's instructions.  The orientation of the planet gears is very important - two adjacent facing the same direction, the other two facing the opposite direction.
+
 -Erhannis
