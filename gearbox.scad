@@ -1,6 +1,11 @@
 use <deps.link/erhannisScad/misc.scad>
 use <deps.link/getriebe/Getriebe.scad>
 
+/**
+If smallSun(drive=true), then the gear ratio is higher than if largeSun(drive=true).
+(Only one should drive, or you get a crash.  Haha.)
+*/
+
 $fn=60;
 $BIG = 1000;
 
@@ -81,21 +86,29 @@ module shaft() {
     }
 }
 
-module smallSun() {
+module smallSun(drive=true) {
     difference() {
         scale(SCALE) union() { // Small sun (10)
             pfeilrad(modul=1, zahnzahl=10, breite=SZ, bohrung=0, eingriffswinkel=20, schraegungswinkel=30, optimiert=false);
         }
-        cylinder(h=40,r=3,center=true);
+        if (drive) {
+          flattedShaft(h=40,r=2.5 + 0.15,center=true);
+        } else {
+          cylinder(h=40,r=2.7,center=true);
+        }
     }
 }
 
-module largeSun() {
+module largeSun(drive=false) {
     difference() {
         scale(SCALE) union() { // Large sun (12)
             pfeilrad(modul=1, zahnzahl=12, breite=SZ, bohrung=0, eingriffswinkel=20, schraegungswinkel=30, optimiert=false);
         }
-        flattedShaft(h=40,r=2.5 + 0.15,center=true);
+        if (drive) {
+          flattedShaft(h=40,r=2.5 + 0.15,center=true);
+        } else {
+          cylinder(h=40,r=2.7,center=true);
+        }
     }
 }
 
