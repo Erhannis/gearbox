@@ -2,6 +2,14 @@ use <deps.link/erhannisScad/misc.scad>
 use <deps.link/getriebe/Getriebe.scad>
 
 /**
+I recommend printing all these with
+Horizontal Expansion: -0.08
+Initial Layer Horizontal Expansion: -0.3
+
+Otherwise they are way too tight to even fit together.
+*/
+
+/**
 If smallSun(drive=true), then the gear ratio is higher than if largeSun(drive=true).
 (Only one should drive, or you get a crash.  Haha.)
 */
